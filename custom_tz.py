@@ -51,8 +51,8 @@ def to_tzfile(df: pd.DataFrame):
     typecnt = len(ttinfo_raw)//3
     charcnt = len(tznames_raw)
 
-    ttisgmtcnt = typecnt
-    ttisstdcnt = typecnt
+    ttisgmtcnt = 0 # TODO: handle not zero case
+    ttisstdcnt = 0 # TODO: handle not zero case
     # data
     data = transitions + lindexes + ttinfo_raw + [tznames_raw]
 
