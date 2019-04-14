@@ -1,0 +1,11 @@
+,transition_year_utc,transition_month_utc,transition_day_utc,transition_hour_utc,transition_minute_utc,transition_second_utc,utc_offset_seconds,dst_bool,tzname
+0,1,1,1,0,0,0,33540,False,LMT
+1,1901,12,13,20,45,52,32400,False,JST
+2,1948,5,1,15,0,0,36000,True,JDT
+3,1948,9,11,15,0,0,32400,False,JST
+4,1949,4,2,15,0,0,36000,True,JDT
+5,1949,9,10,15,0,0,32400,False,JST
+6,1950,5,6,15,0,0,36000,True,JDT
+7,1950,9,9,15,0,0,32400,False,JST
+8,1951,5,5,15,0,0,36000,True,JDT
+9,1951,9,8,15,0,0,32400,False,JST

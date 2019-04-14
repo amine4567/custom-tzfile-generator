@@ -1,4 +1,5 @@
 from struct import pack, calcsize
+import argparse
 
 import pytz
 
@@ -14,6 +15,16 @@ def csv_to_tzfile(df: pd.DataFrame):
     leapcnt = 0
 
     # transitions
+    df = df.rename(
+        columns={
+            "transition_year_utc": "year",
+            "transition_month_utc": "month",
+            "transition_day_utc": "day",
+            "transition_hour_utc": "hour",
+            "transition_minute_utc": "minute",
+            "transition_second_utc": "second",
+        }
+    )
     transitions = pd.to_datetime(
         df[["year", "month", "day", "hour", "minute", "second"]].drop(0)
     ).tolist()
@@ -86,8 +97,12 @@ def csv_to_tzfile(df: pd.DataFrame):
 
 
 if __name__ == "__main__":
-    df_paris = pd.read_csv("custom_format.csv")
-    tzfile_bytes = csv_to_tzfile(df_paris)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("csv_file")
+    args = parser.parse_args()
 
-    with open("custom_tzfile", "wb") as fp:
+    df = pd.read_csv(args.csv_file)
+    tzfile_bytes = csv_to_tzfile(df)
+
+    with open("{}.tzf".format(args.csv_file), "wb") as fp:
         fp.write(tzfile_bytes)

@@ -1,4 +1,4 @@
-,year,month,day,hour,minute,second,utc_offset_seconds,dst_bool,tzname
+,transition_year_utc,transition_month_utc,transition_day_utc,transition_hour_utc,transition_minute_utc,transition_second_utc,utc_offset_seconds,dst_bool,tzname
 0,1,1,1,0,0,0,18540,False,SOU
 1,1901,12,13,20,45,52,18540,False,SOU
 2,1911,3,10,23,51,39,18000,False,SOU

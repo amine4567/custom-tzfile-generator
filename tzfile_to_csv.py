@@ -1,3 +1,5 @@
+import argparse
+
 from pytz.tzfile import build_tzinfo
 
 import pandas as pd
@@ -32,7 +34,16 @@ def tzfile_to_df(bin_file):
 
 
 if __name__ == "__main__":
-    with open("Casablanca", "rb") as f:
+    # with open("Casablanca", "rb") as f:
+    #     output_df = tzfile_to_df(f)
+
+    # output_df.to_csv("Casablanca_csv.csv")
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("tzfile")
+    args = parser.parse_args()
+
+    with open(args.tzfile, "rb") as f:
         output_df = tzfile_to_df(f)
 
-    output_df.to_csv("Casablanca_csv.csv")
+    output_df.to_csv("{}.csv".format(args.tzfile))
