@@ -1,9 +1,8 @@
-from struct import pack, calcsize
 import argparse
-
-import pytz
+from struct import pack
 
 import pandas as pd
+import pytz
 
 
 def csv_to_tzfile(df: pd.DataFrame):
