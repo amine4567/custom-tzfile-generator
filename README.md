@@ -1,1 +1,1 @@
-Convert csv files to tzfiles or vice-versa
+Convert csv files into tzfiles and vice-versa

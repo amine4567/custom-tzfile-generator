@@ -37,7 +37,9 @@ if __name__ == "__main__":
     parser.add_argument("tzfile")
     args = parser.parse_args()
 
-    with open(args.tzfile, "rb") as f:
+    tzfile_name = args.tzfile
+    with open(tzfile_name, "rb") as f:
         output_df = tzfile_to_df(f)
 
-    output_df.to_csv("{}.csv".format(args.tzfile))
+    csv_filename = tzfile_name[:-4] if tzfile_name.endswith(".tzf") else tzfile_name
+    output_df.to_csv(f"{csv_filename}.csv", index=False)
